@@ -1,0 +1,11 @@
+# a = float(input())
+# print(f"Цена: {a} руб.")
+
+# print("Первое число: ")
+# a = int(input())
+# print("Второе число: ")
+# b = int(input())
+# print(f"{a} + {b} = {a + b}")
+# print(f"{a} - {b} = {a - b}")
+# print(f"{a} * {b} = {a * b}")
+# print(f"{a} / {b} = {a / b}")
