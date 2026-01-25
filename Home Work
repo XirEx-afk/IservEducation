@@ -1,1 +1,33 @@
+class Character:
+    def __init__(self, name, health = 100):
+        self.name = name
+        self.health = health
 
+    def take_damage(self, damage):
+        self.health -= damage
+        if self.health < 0:
+            self.health = 0
+    
+    def add_health(self, amount):
+        self.health += amount
+
+class Archer(Character):
+    def __init__(self, name, health = 100, arrows = 10):
+        super().__init__(name, health)
+        self.arrows = arrows
+
+    def shoot_arrows(self, target):
+        if self.arrows > 0:
+            self.arrows -= 1
+            target.take_damage(10)
+            print(f"{self.name} стреляет в {target.name}, Стрел осталось: {self.arrows}")
+        else:
+            print(f"У {self.name} закончились стрелы!")
+archer = Archer("Лучник")
+warrior = Character("Воин")
+
+print(f"Начало: {warrior.name} здровье: {warrior.health}")
+archer.shoot_arrows(warrior)
+print(f"После выстрела: {warrior.name} здоровье: {warrior.health}")
+warrior.add_health(20)
+print(f"После лечениия: {warrior.name} здоровье: {warrior.health}")
